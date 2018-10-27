@@ -234,20 +234,18 @@ strong {
 
 
 footer {
-	border-top: solid 5px #597FA5;
-	border-bottom: solid 5px #597FA5;
 }
 
 footer a {
-	color: #ccc;
+	color: #333;
 	text-decoration: underline;
 }
 
 footer a:hover {
-	color: white;
+	color: black;
 }
 
-.table-striped>tbody>tr:nth-child(odd)>td, 
+.table-striped>tbody>tr:nth-child(odd)>td,
 .table-striped>tbody>tr:nth-child(odd)>th {
 	background-color: #fbfbfb;
 }

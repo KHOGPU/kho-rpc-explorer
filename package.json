@@ -1,7 +1,7 @@
 {
-  "name": "btc-rpc-explorer",
+  "name": "kho-rpc-explorer",
   "version": "1.0.0",
-  "description": "Explorer for Bitcoin and RPC-compatible blockchains",
+  "description": "Explorer for Khorium and RPC-compatible blockchains",
   "private": false,
   "scripts": {
     "start": "node ./bin/www",
@@ -10,14 +10,14 @@
   },
   "keywords": [
     "bitcoin",
-    "litecoin",
+    "khorium",
     "blockchain"
   ],
   "author": "Dan Janosik <janoside@gmail.com>",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/janoside/btc-rpc-explorer.git"
+    "url": "git+https://github.com/KHOGPU/kho-rpc-explorer.git"
   },
   "dependencies": {
     "bitcoin-core": "2.0.0",
