@@ -41,8 +41,8 @@ router.get("/", function(req, res) {
 	promises.push(coreApi.getMempoolInfo());
 	promises.push(coreApi.getMiningInfo());
 
-	var chainTxStatsIntervals = [ 144, 144 * 7, 144 * 30, 144 * 265 ];
-	res.locals.chainTxStatsLabels = [ "24 hours", "1 week", "1 month", "1 year", "All time" ];
+	var chainTxStatsIntervals = [144,144*7];
+	res.locals.chainTxStatsLabels = ["24 hours","1 week"];
 	for (var i = 0; i < chainTxStatsIntervals.length; i++) {
 		promises.push(coreApi.getChainTxStats(chainTxStatsIntervals[i]));
 	}
@@ -154,7 +154,7 @@ router.get("/peers", function(req, res) {
 		if (peerIps.length > 0) {
 			utils.geoLocateIpAddresses(peerIps).then(function(results) {
 				res.locals.peerIpSummary = results;
-				
+
 				res.render("peers");
 			});
 		} else {
@@ -268,7 +268,7 @@ router.get("/blocks", function(req, res) {
 				}
 			}
 		}
-		
+
 		coreApi.getBlocksByHeight(blockHeights).then(function(blocks) {
 			res.locals.blocks = blocks;
 
@@ -510,7 +510,7 @@ router.get("/address/:address", function(req, res) {
 	var offset = 0;
 	var sort = "desc";
 
-	
+
 	if (req.query.limit) {
 		limit = parseInt(req.query.limit);
 
@@ -539,7 +539,7 @@ router.get("/address/:address", function(req, res) {
 	res.locals.sort = sort;
 	res.locals.paginationBaseUrl = ("/address/" + address + "?sort=" + sort);
 	res.locals.transactions = [];
-	
+
 	res.locals.result = {};
 
 	try {
@@ -627,7 +627,7 @@ router.get("/address/:address", function(req, res) {
 
 					// always request the first txid; we'll use it to show "first seen" info for the address
 					pagedTxids.unshift(txidResult.result[0].tx_hash);
-					
+
 					coreApi.getRawTransactionsWithInputs(pagedTxids).then(function(rawTxResult) {
 						// first result is always the earliest tx, but doesn't fit into the current paging;
 						// store it as firstSeenTransaction then remove from list
@@ -683,7 +683,7 @@ router.get("/address/:address", function(req, res) {
 					}).catch(function(err) {
 						reject(err);
 					});
-				
+
 				}).catch(function(err) {
 					reject(err);
 				});
@@ -715,7 +715,7 @@ router.get("/address/:address", function(req, res) {
 				res.render("address");
 			});
 		});
-		
+
 	}).catch(function(err) {
 		res.locals.userMessage = "Failed to load address " + address + " (" + err + ")";
 
@@ -872,7 +872,7 @@ router.get("/rpc-browser", function(req, res) {
 						if (err3) {
 							if (result3) {
 								res.locals.methodResult = {error:("" + err3), result:result3};
-								
+
 							} else {
 								res.locals.methodResult = {error:("" + err3)};
 							}
@@ -989,22 +989,22 @@ router.get("/tx-stats", function(req, res) {
 			res.render("tx-stats");
 		});
 	});
-	
+
 });
 
 router.get("/about", function(req, res) {
 	res.render("about");
 });
 
-router.get("/fun", function(req, res) {
+router.get("/interesting", function(req, res) {
 	var sortedList = coins[config.coin].historicalData;
 	sortedList.sort(function(a, b){
 		return ((a.date > b.date) ? 1 : -1);
 	});
 
 	res.locals.historicalData = sortedList;
-	
-	res.render("fun");
+
+	res.render("interesting");
 });
 
 module.exports = router;
