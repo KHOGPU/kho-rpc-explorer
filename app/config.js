@@ -1,11 +1,11 @@
 var credentials = require("./credentials.js");
 var coins = require("./coins.js");
 
-var currentCoin = "BTC";
+var currentCoin = "KHO";
 
 module.exports = {
 	cookiePassword: "0x000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f",
-	demoSite: true,
+	demoSite: false,
 	coin: currentCoin,
 
 	rpcBlacklist:[
@@ -50,7 +50,7 @@ module.exports = {
 		"logging",
 		"move",
 		"preciousblock",
-		"pruneblockchain"
+		"pruneblockchain",
 		"removeprunedfunds",
 		"rescanblockchain",
 		"savemempool",
@@ -58,7 +58,7 @@ module.exports = {
 		"sendmany",
 		"sendtoaddress",
 		"sendrawtransaction",
-		"setaccount"
+		"setaccount",
 		"setban",
 		"setnetworkactive",
 		"signmessage",
@@ -72,7 +72,6 @@ module.exports = {
 		"walletpassphrasechange",
 	],
 
-	// https://uasf.saltylemon.org/electrum
 	electrumXServers:[
 		// {host: "electrum.example.com", port:50002}, ...
 	],
@@ -86,7 +85,6 @@ module.exports = {
 
 	credentials: credentials,
 
-	// Edit "ipWhitelistForRpcCommands" regex to limit access to RPC Browser / Terminal to matching IPs
 	ipWhitelistForRpcCommands:/^(127\.0\.0\.1)?(\:\:1)?$/,
 
 	siteTools:[
@@ -101,24 +99,14 @@ module.exports = {
 
 		{name:"RPC Browser", url:"/rpc-browser", desc:"Browse the RPC functionality of this node. See docs and execute commands.", fontawesome:"fas fa-book"},
 		{name:"RPC Terminal", url:"/rpc-terminal", desc:"Directly execute RPCs against this node.", fontawesome:"fas fa-terminal"},
-		
-		{name:(coins[currentCoin].name + " Fun"), url:"/fun", desc:"See fun/interesting historical blockchain data.", fontawesome:"fas fa-certificate"}
+
+		{name:(coins[currentCoin].name + " Historical Data"), url:"/interesting", desc:"See interesting historical blockchain data.", fontawesome:"fas fa-certificate"}
 	],
-
-	donationAddresses:{
-		coins:["BTC", "LTC"],
-		sites:{"BTC":"https://btc.chaintools.io", "LTC":"https://ltc.chaintools.io"},
-
-		"BTC":{address:"3NPGpNyLLmVKCEcuipBs7G4KpQJoJXjDGe"},
-		"LTC":{address:"ME4pXiXuWfEi1ANBDo9irUJVcZBhsTx14i"}
-	},
 
 	headerDropdownLinks: {
 		title:"Related Sites",
 		links:[
-			{name: "Bitcoin Explorer", url:"https://btc.chaintools.io", imgUrl:"/img/logo/btc.svg"},
-			{name: "Litecoin Explorer", url:"https://ltc.chaintools.io", imgUrl:"/img/logo/ltc.svg"},
-			{name: "Lightning Explorer", url:"https://lightning.chaintools.io", imgUrl:"/img/logo/lightning.svg"},
+			{name: "Khorium Exchange", url:"https://exchanger.io", imgUrl:"/img/logo/kho.svg"},
 		]
 	}
 };
