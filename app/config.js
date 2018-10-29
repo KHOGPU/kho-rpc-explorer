@@ -97,8 +97,8 @@ module.exports = {
 		{name:"Mempool Summary", url:"/mempool-summary", desc:"Detailed summary of the current mempool for this node.", fontawesome:"fas fa-clipboard-list"},
 		{name:"Unconfirmed Transactions", url:"/unconfirmed-tx", desc:"Browse unconfirmed/pending transactions.", fontawesome:"fas fa-unlock-alt"},
 
-		{name:"RPC Browser", url:"/rpc-browser", desc:"Browse the RPC functionality of this node. See docs and execute commands.", fontawesome:"fas fa-book"},
-		{name:"RPC Terminal", url:"/rpc-terminal", desc:"Directly execute RPCs against this node.", fontawesome:"fas fa-terminal"},
+		//{name:"RPC Browser", url:"/rpc-browser", desc:"Browse the RPC functionality of this node. See docs and execute commands.", fontawesome:"fas fa-book"},
+		//{name:"RPC Terminal", url:"/rpc-terminal", desc:"Directly execute RPCs against this node.", fontawesome:"fas fa-terminal"},
 
 		{name:(coins[currentCoin].name + " Historical Data"), url:"/interesting", desc:"See interesting historical blockchain data.", fontawesome:"fas fa-certificate"}
 	],
@@ -106,7 +106,7 @@ module.exports = {
 	headerDropdownLinks: {
 		title:"Related Sites",
 		links:[
-			{name: "Khorium Exchange", url:"https://exchanger.io", imgUrl:"/img/logo/kho.svg"},
+			{name: "Gate.io", url:"https://gate.io", imgUrl:"/img/logo/gate-io.svg"},
 		]
 	}
 };
