@@ -72,7 +72,7 @@ module.exports = {
 	historicalData: [
 		{
 			type: "blockheight",
-			date: "20018-09-30",
+			date: "2018-09-30",
 			blockHeight: 0,
 			blockHash: "0000000039a01bf0a24d7caee86bd0e3666bf8498984bc170734860c9854ee03",
 			summary: "The Khorium Genesis Block.",
