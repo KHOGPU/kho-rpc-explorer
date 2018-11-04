@@ -185,10 +185,10 @@ block content
 								div(class="summary-table-label") Fee Rate
 								div(class="summary-table-content monospace")
 									if (result.getrawtransaction.vsize != result.getrawtransaction.size)
-										span #{utils.addThousandsSeparators(new DecimalRounded(totalInputValue).minus(totalOutputValue).dividedBy(result.getrawtransaction.vsize).times(100000000))} sat/VB
+										span #{utils.addThousandsSeparators(new DecimalRounded(totalInputValue).minus(totalOutputValue).dividedBy(result.getrawtransaction.vsize).times(100000000))} μKHO/VB
 										br
 
-									span #{utils.addThousandsSeparators(new DecimalRounded(totalInputValue).minus(totalOutputValue).dividedBy(result.getrawtransaction.size).times(100000000))} sat/B
+									span #{utils.addThousandsSeparators(new DecimalRounded(totalInputValue).minus(totalOutputValue).dividedBy(result.getrawtransaction.size).times(100000000))} μKHO/B
 
 
 				if (result.getrawtransaction.vin[0].coinbase)
