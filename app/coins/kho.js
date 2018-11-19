@@ -86,6 +86,15 @@ module.exports = {
 			summary: "The coinbase transaction of the Genesis Block.",
 			alertBodyHtml: "This transaction doesn't really exist! This is the coinbase transaction of the <a href='/block/0000000039a01bf0a24d7caee86bd0e3666bf8498984bc170734860c9854ee03'>Khorium Genesis Block</a>. For more background about this special-case transaction, you can read <a href='https://github.com/bitcoin/bitcoin/issues/3303'>this brief discussion</a> among some of the <a href='https://bitcoin.org'>Bitcoin</a> developers.",
 			referenceUrl: "https://github.com/bitcoin/bitcoin/issues/3303"
+		},
+		{
+			type: "blockheight",
+			date: "2018-11-19",
+			blockHeight: 4200,
+			blockHash: "0002ee0d7dd32f7569493fb774fe3614b69384e1c183989686e0eaa9e9cc1854",
+			summary: "The last premined Block by Developers.",
+			alertBodyHtml: "This is the last premined block by devs in the Khorium blockchain.",
+			referenceUrl: "https://explorer.khorium.org/block-height/4200"
 		}
 	],
 	exchangeRateData:{
